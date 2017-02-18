@@ -1,6 +1,8 @@
 package com.dom925.demo.spring.hidernate.service.Impl;
 
+import com.dom925.demo.spring.hidernate.model.Cat;
 import com.dom925.demo.spring.hidernate.service.CatService;
+import com.dom925.demo.spring.hidernate.service.DogService;
 import com.dom925.demo.spring.hidernate.service.MouseService;
 import com.dom925.demo.spring.hidernate.service.PersonService;
 import org.junit.Test;
@@ -21,11 +23,23 @@ public class MouseServiceImplTest {
 
     @Resource(name = "mouseService")
     public MouseService mouseService;
+    ApplicationContext context = new ClassPathXmlApplicationContext("classpath:META-INF/spring/app-context.xml");
 
     @Test
     public void springTest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:META-INF/spring/app-context.xml");
         PersonService personService = context.getBean("personServiceImpl", PersonService.class);
         CatService catService = context.getBean("catService", CatService.class);
+        DogService dogdao = (DogService) context.getBean("dogService");
+    }
+
+
+    @Test
+    public void test() {
+        CatService catService = context.getBean("catService", CatService.class);
+        Cat cat = new Cat();
+        cat.setPassword("这武汉");
+        cat.setUsername("this is a cat ");
+        // dog2.save(dog);
+        catService.save(cat);
     }
 }

@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-//import com.dom925.demo.spring.hibernate.dao.PersonDAO;
-//import com.dom925.demo.spring.hibernate.model.Person;
 
 
 @Service

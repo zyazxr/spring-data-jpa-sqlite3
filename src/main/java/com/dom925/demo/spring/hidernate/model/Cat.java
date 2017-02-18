@@ -10,17 +10,16 @@ public class Cat implements Serializable {
      *
      */
     private static final long serialVersionUID = 1L;
-
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
     public String username;
 
     public String password;
 
-    //	 @Id
-//	    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="TestSequence")
-//	    //@GeneratedValue(strategy=GenerationType.IDENTITY) // MYSQLʱ��������ʹ������
-//	    @SequenceGenerator(name = "TestSequence", sequenceName = "SEQ_Test", allocationSize=1)
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
