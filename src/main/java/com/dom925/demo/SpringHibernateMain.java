@@ -18,8 +18,8 @@ public class SpringHibernateMain {
         String path = personService.getpath();
         System.out.println(path);
         Person person = new Person();
-        person.setFirstName("HILLARY");
-        person.setLastName("CLINTON");
+        person.setFirstName("HILLARY22");
+        person.setLastName("CLINTON22");
         personService.insertPerson(person);
 
         for (Person p : personService.getAllPersons()) {
@@ -28,8 +28,8 @@ public class SpringHibernateMain {
 
 //        CatService catService = context.getBean("catService", CatService.class);
         Cat cat = new Cat();
-        cat.setFirstName("这武汉");
-        cat.setLastName("this is a cat ");
+        cat.setFirstName("这武汉22");
+        cat.setLastName("this is a cat22 ");
         // dog2.save(dog);
         catService.save(cat);
     }

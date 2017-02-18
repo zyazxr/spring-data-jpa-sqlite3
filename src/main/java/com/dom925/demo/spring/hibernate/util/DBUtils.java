@@ -3,7 +3,6 @@ package com.dom925.demo.spring.hibernate.util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -19,8 +18,9 @@ public class DBUtils {
         this.dataSource = dataSource;
     }
 
-    @PostConstruct
+    //    @PostConstruct
     public void initialize() {
+        System.out.println("I'm  init  method  using  @PostConstrut....");
         try {
             Connection connection = dataSource.getConnection();
             Statement statement = connection.createStatement();
