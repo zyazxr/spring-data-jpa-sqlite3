@@ -1,12 +1,17 @@
-package com.dom925.demo.spring.hibernate.service;
+package com.dom925.demo.spring.hidernate.service;
+
+import com.dom925.demo.spring.hidernate.model.Person;
 
 import java.util.List;
 
-import com.dom925.demo.spring.hibernate.model.Person;
+//import com.dom925.demo.spring.hibernate.model.Person;
 
 public interface PersonService {
 
- public List<Person> getAllPersons();
- 
- public void insertPerson(Person person);
+    List<Person> getAllPersons();
+
+    void insertPerson(Person person);
+
+    String getpath();
+
 }

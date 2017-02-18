@@ -1,11 +1,6 @@
-package com.dom925.demo.spring.hibernate.model;
+package com.dom925.demo.spring.hidernate.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "PERSON_INFO")
@@ -46,14 +41,7 @@ public class Person {
    return true;
   }
   Person person = (Person) obj;
-  if (firstName != null ?
-    !firstName.equals(person.firstName)
-    :person.firstName != null){
-   return false;
-  }
-  else {
-   return true;
-  } 
+  return firstName != null ? firstName.equals(person.firstName) : person.firstName == null;
  }
  @Override
  public String toString() {

@@ -1,12 +1,14 @@
-package com.dom925.demo.spring.hibernate.dao;
+package com.dom925.demo.spring.hidernate.dao;
+
+import com.dom925.demo.spring.hidernate.model.Person;
 
 import java.util.List;
 
-import com.dom925.demo.spring.hibernate.model.Person;
+//import com.dom925.demo.spring.hibernate.model.Person;
 
 public interface PersonDAO {
 
- public List<Person> getAllPersons();
- 
- public void insertPerson (Person person);
+    List<Person> getAllPersons();
+
+    void insertPerson(Person person);
 }

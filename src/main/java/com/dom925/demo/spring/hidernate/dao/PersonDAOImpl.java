@@ -1,7 +1,6 @@
-package com.dom925.demo.spring.hibernate.dao;
+package com.dom925.demo.spring.hidernate.dao;
 
-import java.util.List;
-
+import com.dom925.demo.spring.hidernate.model.Person;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.dom925.demo.spring.hibernate.model.Person;
+import java.util.List;
+
+//import com.dom925.demo.spring.hibernate.model.Person;
 
 @Repository
 @Transactional(readOnly = true)
-public class PersonDaoImpl implements PersonDAO {
+class PersonDaoImpl implements PersonDAO {
 
  @Autowired
  private SessionFactory sessionFactory;

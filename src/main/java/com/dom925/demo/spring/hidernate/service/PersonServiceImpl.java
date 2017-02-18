@@ -1,17 +1,18 @@
-package com.dom925.demo.spring.hibernate.service;
+package com.dom925.demo.spring.hidernate.service;
+
+import com.dom925.demo.spring.hidernate.dao.PersonDAO;
+import com.dom925.demo.spring.hidernate.model.Person;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
-import com.dom925.demo.spring.hibernate.dao.PersonDAO;
-import com.dom925.demo.spring.hibernate.model.Person;
+//import com.dom925.demo.spring.hibernate.dao.PersonDAO;
+//import com.dom925.demo.spring.hibernate.model.Person;
 
 
 @Service
-public class PersonServiceImpl implements PersonService {
+class PersonServiceImpl implements PersonService {
 
  @Autowired
  private PersonDAO personDao;
@@ -23,6 +24,10 @@ public class PersonServiceImpl implements PersonService {
 
  public void insertPerson(Person person) {
   personDao.insertPerson(person);
+ }
+
+ public String getpath() {
+  return this.getClass().getClassLoader().getResource("").getPath();
  }
 
 }
