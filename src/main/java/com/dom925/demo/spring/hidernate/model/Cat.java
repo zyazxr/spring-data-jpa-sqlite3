@@ -4,48 +4,60 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "cat")
+@Table(name = "CAT_INFO")
 public class Cat implements Serializable {
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    private Integer id;
 
-    public String username;
+    @Column(name = "FIRST_NAME")
+    private String firstName;
 
-    public String password;
+    @Column(name = "LAST_NAME")
+    private String lastName;
 
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    @Column(length = 18, unique = true)
-    public String getUsername() {
-        return username;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    @Column(length = 18)
-    public String getPassword() {
-        return password;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        Cat cat = (Cat) obj;
+        return firstName != null ? firstName.equals(cat.firstName) : cat.firstName == null;
+    }
+
+    @Override
+    public String toString() {
+        return "Person [id="
+                + id
+                + ", name="
+                + firstName
+                + " "
+                + lastName
+                + "]";
     }
 }

@@ -37,9 +37,8 @@ public class MouseServiceImplTest {
     public void test() {
         CatService catService = context.getBean("catService", CatService.class);
         Cat cat = new Cat();
-        cat.setPassword("这武汉");
-        cat.setUsername("this is a cat ");
-        // dog2.save(dog);
+        cat.setFirstName("这武汉");
+        cat.setLastName("this is a cat ");
         catService.save(cat);
     }
 }
