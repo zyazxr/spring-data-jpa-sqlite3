@@ -1,7 +1,8 @@
-package com.dom925.demo.spring.hidernate.service;
+package com.dom925.demo.spring.hidernate.service.Impl;
 
 import com.dom925.demo.spring.hidernate.dao.PersonDAO;
 import com.dom925.demo.spring.hidernate.model.Person;
+import com.dom925.demo.spring.hidernate.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
